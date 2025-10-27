@@ -8,31 +8,27 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 <Container>
 	<section class="hero-section__section">
 		<div class="hero-section__text">
-				<h1>Welcome to Odyssey</h1>
-				<p>
-					A marketing website theme built with <a
-						href="https://astro.build"
-						target="_blank"
-						rel="noreferrer">Astro</a
-					> and carefully crafted for startups and businesses.
-				</p>
-				<div class="hero-btns__container">
-					<Button href="/theme/get-started" customIcon
-						>Get Started
-            <Fragment slot="icon">
-              <Icon name="ic:baseline-chevron-right"/>
-            </Fragment>
-            </Button
-					>
-					<Button href="/theme/style-guide" unelevated>Style Guide</Button>
-				</div>
-        {settings.enableThemeSwitcher && <ThemeSwitcher client:only/>}
+					<h1>Han Lab (UPenn)</h1>
+					<p>
+						We advance machine learning for healthcare and biomedical AI at the University of Pennsylvania.
+					</p>
+					<div class="hero-btns__container">
+						<Button href="/publications" customIcon
+							>Publications
+	            <Fragment slot="icon">
+	              <Icon name="ic:baseline-chevron-right"/>
+	            </Fragment>
+	            </Button
+						>
+						<Button href="/join" unelevated>Join Us</Button>
+					</div>
+        {settings.enableThemeSwitcher && <ThemeSwitcher client:only="lit"/>}
 		</div>
 		<div class="hero-section__image">
 				<picture>
 					<img
-						src="/assets/images/home/classic-hero.jpg"
-						alt="Astro Odyssey"
+							src="/assets/images/home/classic-hero.jpg"
+							alt="Han Lab group"
 						id="home-hero-image"
 					/>
 				</picture>

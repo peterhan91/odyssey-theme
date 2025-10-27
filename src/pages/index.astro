@@ -1,92 +1,112 @@
 ---
-import { Container, FeatureCard } from '@components/odyssey-theme';
+import { Container } from '@components/odyssey-theme';
 
 import Layout from '../layouts/Page.astro';
-import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
+import GoldWaveHero from '../components/sections/heros/GoldWaveHero.astro';
+import AutoGallery from '../components/core/AutoGallery.astro';
 ---
 
 <Layout>
-	<HomeHeroSection />
-	<Container>
-		<section class="feature-card__section">
-			<h2>Landing Pages</h2>
-			<p>
-				Use one of our landing pages to jumpstart your website or
-				ad campaign.
-			</p>
-			<div class="feature-card__grid">
-				<FeatureCard href="/landing-pages/landing-1" title="Landing Page 1" imgSrc="/assets/images/home/screenshots/landing-1">
-				</FeatureCard>
-				<FeatureCard href="/landing-pages/landing-2" title="Landing Page 2" imgSrc="/assets/images/home/screenshots/landing-2">
-				</FeatureCard>
-			</div>
-		</section>
-	</Container>
+  <GoldWaveHero
+    crestSrc="/assets/upenn-wordmark.png"
+    crestAlt="University of Pennsylvania"
+    title="Welcome to the Han Lab"
+    subtitle="We pioneer machine learning for healthcare and biomedical AI. Our mission is to scale the expertise of clinicians through innovation in algorithms, data curation, and real‑world impact studies."
+    showCta={false}
+  />
 
-	<Container>
-		<section class="feature-card__section">
-			<h2>Company Pages</h2>
-			<p>
-				Use one of our prebuilt company pages for your about page, contact page,
-				legal pages, blog posts, etc.
-			</p>
-			<div class="feature-card__grid">
-				<FeatureCard href="/company/about" title="About Page" imgSrc="/assets/images/home/screenshots/about">
-				</FeatureCard>
-				<FeatureCard href="/company/contact" title="Contact Page" imgSrc="/assets/images/home/screenshots/contact">
-				</FeatureCard>
-				<FeatureCard href="/blog/" title="Blog Page" imgSrc="/assets/images/home/screenshots/blog">
-				</FeatureCard>
-				<FeatureCard
-					href="/blog/posts/remote-work-mental-health"
-					title="Blog Post"
-          imgSrc="/assets/images/home/screenshots/blog-post"
-				>
-				</FeatureCard>
-				<FeatureCard
-					href="/company/legal"
-					imgSrc="/assets/images/home/screenshots/legal"
-					title="Legal Page"
-				>
-				</FeatureCard>
-			</div>
-		</section>
-	</Container>
+  <Container>
+    <section class="research__section">
+      <div class="research__grid">
+        <div class="research__left">
+          <img class="research__logo-img" src="/assets/research-logo.png" alt="Han Lab and Perelman Radiology" />
+          <div class="lab-members">
+            <h3>Lab Members</h3>
+            <ul class="people__list">
+              <li>Prof. First Last · Principal Investigator</li>
+              <li>Researcher Name · Postdoctoral Fellow</li>
+              <li>Student Name · PhD Student</li>
+              <li>Admin Name · Coordinator</li>
+              <li><a href="/join">+ Join the Lab</a></li>
+            </ul>
+          </div>
+          <div class="lab-gallery">
+            <AutoGallery images={[ '/assets/papers/paper_1.png', '/assets/papers/paper_2.png' ]} interval={4000} />
+          </div>
+        </div>
+        <div>
+          <h2>Research</h2>
+          <p>Our group advances generalizable medical AI systems that reason with multiple data modalities and communicate in natural language.</p>
+          <h3>Generative Medical Imaging AI</h3>
+          <p>
+            My research focuses on developing generative AI models to support clinicians with predictive visual and textual insights into pathological conditions, serving as tools to improve clinical decision-making. Leveraging generative adversarial networks (GANs) and diffusion models, I have pioneered methods to enhance prognostic predictions in healthcare. I developed a GAN-based system capable of predicting osteoarthritis (OA) progression by synthesizing future radiographic images. This system has demonstrated predictive accuracy exceeding that of radiologists, forecasting OA progression up to eight years in advance, as published in Nature Machine Intelligence, providing clinicians with a valuable visual resource for anticipating disease outcomes. To address data-sharing constraints in medical research, I proposed using GANs to create high-resolution synthetic medical images devoid of identifiable patient information. This innovation not only bolsters computer vision model performance when trained on limited datasets but also diversifies clinical databases by incorporating underrepresented disease profiles through synthetic data integration. I also introduced DiffChest, a self-conditioned diffusion model trained on extensive patient data, providing patient-specific visual explanations and identifying potential confounding factors that could bias diagnostic models. This model significantly improves the robustness and interpretability of AI-based radiologic classification systems.
+          </p>
+          <h3>Large Language Model for Medicine</h3>
+          <p>
+            In medicine, large language models (LLMs) like OpenAI’s GPT series have emerged as transformative tools. Recognizing the limitations of proprietary models and the need for patient privacy, I collaborated with Charité - Berlin University Medicine to develop MedAlpaca, an open-source medical LLM fine-tuned using the Medical Meadow dataset, a collection of approximately 900,000 medical question-answer pairs I curated. This work demonstrated that specialized fine-tuning substantially improves LLMs' ability to respond accurately to clinical inquiries. Additionally, I evaluated multimodal LLMs like GPT-4Vision on complex clinical cases from the New England Journal of Medicine and the Journal of the American Medical Association, showing that these models can surpass human performance in interpreting medical images when integrated with textual data. As co-senior author on a Nature Communications study, I showed that GPT-4’s Advanced Data Analysis tool could autonomously develop machine learning models from raw clinical trial data, often outperforming bespoke models crafted by data scientists, thereby offering a scalable framework to democratize ML-driven clinical research.
+          </p>
+          <h3>Interpretable & Robust Medical AI</h3>
+          <p>
+            Addressing the vulnerabilities and ethical considerations of AI in medicine, I explored the susceptibility of LLMs and medical vision models to misinformation and adversarial attacks. My research demonstrated that manipulating just 1% of an LLM's parameters could inject incorrect biomedical facts, raising concerns about the reliability of AI-generated medical advice. Additionally, I investigated adversarial attacks on medical vision models and proposed methods to enhance their robustness and interpretability. Specifically, I showed that while convolutional neural networks (CNNs) are highly susceptible to white- and black-box adversarial attacks in computational pathology tasks, vision transformers (ViTs) are significantly more robust learners. This suggests that deploying ViTs instead of CNNs in clinical settings can provide inherent protection against input perturbations, including adversarial attacks. In medical image reconstruction, I further demonstrated that even state-of-the-art unsupervised diffusion-based models for MRI reconstruction are susceptible to adversarial worst-case perturbations in k-space that can generate misleading, hallucinated tissue structures.
+          </p>
+        </div>
+      </div>
+    </section>
+  </Container>
 
-	<Container>
-		<section class="feature-card__section">
-			<h2>Theme Pages</h2>
-			<p>Learn more about how to set up and use the Odyssey Theme.</p>
-			<div class="feature-card__grid">
-				<FeatureCard
-					href="/theme/get-started"
-					imgSrc="/assets/images/home/screenshots/get-started"
-					title="Get Started"
-				>
-				</FeatureCard>
-				<FeatureCard
-					href="/theme/style-guide"
-					imgSrc="/assets/images/home/screenshots/style-guide"
-					title="Style Guide"
-				>
-				</FeatureCard>
-			</div>
-		</section>
-	</Container>
+  <Container>
+    <section class="contact__section">
+      <div>
+        <h2>Get Involved</h2>
+        <p>Join our mission to advance AI‑driven solutions in medicine through collaboration, support, or by applying to join the group.</p>
+        <p><strong>Students:</strong> We welcome applicants from CS, engineering, and medicine. See <a href="/join">openings</a>.</p>
+        <p><strong>Collaborations:</strong> We partner with clinicians, institutions, and industry. Reach out using the form.</p>
+      </div>
+      <div>
+        <form name="Homepage Contact" method="POST" action="/contact-thank-you" class="contact__form">
+          <div class="form-row">
+            <input type="text" name="First Name" placeholder="First Name" required />
+            <input type="text" name="Last Name" placeholder="Last Name" required />
+          </div>
+          <input type="email" name="Email" placeholder="Email" required />
+          <textarea name="Message" placeholder="Message" rows="6" required></textarea>
+          <button class="btn btn--outlined" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </Container>
 </Layout>
 
 <style>
-	.feature-card__section {
-		margin: var(--section-margin) auto;
-	}
-	.feature-card__grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: var(--theme-grid-gap);
-	}
-	@media (max-width: 768px) {
-		.feature-card__grid {
-			grid-template-columns: 1fr;
-		}
-	}
+.research__section { margin: var(--section-margin) auto; }
+.research__grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 2rem; align-items: start; }
+.research__logo-img { max-width: 480px; width: 100%; height: auto; display: block; }
+/* Make Research headers smaller than global defaults */
+.research__section h2 { font-size: var(--font-size-lg); }
+.research__section h3 { font-size: var(--font-size-md); }
+/* Lab members block below the logo */
+.lab-members { margin-top: 4rem; }
+.lab-gallery { margin-top: 4rem; }
+
+.people__list { margin: 0.5rem 0 0 0; padding: 0; list-style: none; }
+.people__list li { margin: 0 0 0.35rem 0; }
+
+.contact__section {
+  margin: var(--section-margin) auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;
+}
+.contact__form { display: grid; gap: 0.75rem; }
+.contact__form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.contact__form input, .contact__form textarea {
+  width: 100%; padding: 0.5rem; border: 2px solid #bbb; border-radius: 0.25rem;
+}
+.btn--outlined {
+  color: var(--theme-primary);
+  background-color: transparent;
+  border: 2px solid var(--theme-primary);
+  padding: 0.36rem 0.92rem; border-radius: var(--theme-button-border-radius);
+}
+@media (max-width: 900px) {
+  .research__grid, .two-col__section, .contact__section { grid-template-columns: 1fr; }
+}
 </style>

@@ -1,80 +1,31 @@
 export const footerSocials = [
-  {
-    name: 'Twitter',
-    url: 'https://twitter.com/jaydanurwin',
-    icon: "mdi:twitter",
-  },
-  {
-    name: 'Youtube',
-    url: 'https://youtube.com/@jaydanurwin',
-    icon: "mdi:youtube",
-  },
-  {
-    name: 'Github',
-    url: 'https://github.com/jaydanurwin',
-    icon: "mdi:github",
-  },
-  {
-    name: 'Discord',
-    url: 'https://astro.build/chat',
-    icon: "ic:baseline-discord",
-  },
+  // Update these to Han Lab profiles as needed
+  { name: 'Twitter/X', url: '#', icon: 'mdi:twitter' },
+  { name: 'YouTube', url: '#', icon: 'mdi:youtube' },
+  { name: 'GitHub', url: '#', icon: 'mdi:github' },
 ]
 
 export const footerLists = [
-	{
-		title: 'Landing Pages',
-		items: [
-			{
-				title: 'Landing Page 1',
-				slug: '/landing-pages/landing-1',
-			},
-			{
-				title: 'Landing Page 2',
-				slug: '/landing-pages/landing-2',
-			},
-      // {
-			// 	title: 'Landing Page 3',
-			// 	slug: '/landing-pages/landing-3',
-			// },
-		],
-	},
-	{
-		title: 'Company',
-		items: [
-			{
-				title: 'About',
-				slug: '/company/about',
-			},
-			{
-				title: 'Blog',
-				slug: '/blog',
-			},
-			{
-				title: 'Contact',
-				slug: '/company/contact',
-			},
-		],
-	},
-	{
-		title: 'Theme',
-		items: [
-			{
-				title: 'Get Started',
-				slug: '/theme/get-started',
-			},
-			{
-				title: 'Style Guide',
-				slug: '/theme/style-guide',
-			},
-      {
-        title: 'Theme Setup',
-        slug: '/theme/theme-setup',
-      },
-      {
-        title: 'Customizing Odyssey',
-        slug: '/theme/customizing-odyssey',
-      }
-		],
-	},
+  {
+    title: 'Lab',
+    items: [
+      { title: 'People', slug: '/people' },
+      { title: 'Research', slug: '/research' },
+      { title: 'Publications', slug: '/publications' },
+    ],
+  },
+  {
+    title: 'Resources',
+    items: [
+      { title: 'Software', slug: '/software' },
+      { title: 'News', slug: '/blog' },
+      { title: 'Join', slug: '/join' },
+    ],
+  },
+  {
+    title: 'Contact',
+    items: [
+      { title: 'Contact', slug: '/contact' },
+    ],
+  },
 ];
