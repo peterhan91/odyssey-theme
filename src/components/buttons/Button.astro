@@ -1,17 +1,27 @@
 ---
-const { href, unelevated, outlined, customIcon, onPrimary, newTab } =
-  Astro.props;
+const {
+  href,
+  unelevated,
+  outlined,
+  customIcon,
+  onPrimary,
+  newTab,
+  ...rest
+} = Astro.props;
+
+const { class: className, target, rel, ...attrs } = rest;
 
 const Tag = href ? 'a' : 'button';
 ---
 
 <Tag
-  class={`btn ${unelevated && `btn--unelevated`} ${
-    outlined && `btn--outlined`
-  } ${onPrimary && `btn--on-primary`}`}
+  class={`btn${unelevated ? ' btn--unelevated' : ''}${
+    outlined ? ' btn--outlined' : ''
+  }${onPrimary ? ' btn--on-primary' : ''}${className ? ` ${className}` : ''}`}
   href={href}
-  target={`${newTab ? '_blank': ``}`}
-  rel={`${newTab ? 'noopener noreferrer' : ``}`}
+  target={newTab ? '_blank' : target}
+  rel={newTab ? 'noopener noreferrer' : rel}
+  {...attrs}
 >
   <slot />
   {customIcon && <span class="custom-icon__span"><slot name="icon">custom_icon</slot></span>}
