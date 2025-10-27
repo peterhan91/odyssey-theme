@@ -22,10 +22,12 @@ import AutoGallery from '../components/core/AutoGallery.astro';
           <div class="lab-members">
             <h3>Lab Members</h3>
             <ul class="people__list">
-              <li>Prof. First Last · Principal Investigator</li>
-              <li>Researcher Name · Postdoctoral Fellow</li>
-              <li>Student Name · PhD Student</li>
-              <li>Admin Name · Coordinator</li>
+              <li>Prof. Tianyu Han · Principal Investigator</li>
+              <li>Dr. Haifan Gong · Postdoctoral Fellow</li>
+              <li>Dr. Yuqi Wang · Postdoctoral Fellow</li>
+              <li>Akis Giannoukos · Intern</li>
+              <li>Meera Desikan · Intern</li>
+              <li>Jessica Incmikoski · Coordinator</li>
               <li><a href="/join">+ Join the Lab</a></li>
             </ul>
           </div>
@@ -35,18 +37,18 @@ import AutoGallery from '../components/core/AutoGallery.astro';
         </div>
         <div>
           <h2>Research</h2>
-          <p>Our group advances generalizable medical AI systems that reason with multiple data modalities and communicate in natural language.</p>
-          <h3>Generative Medical Imaging AI</h3>
+          <p>Our group leads the development of next-generation Generative and Agentic Medical AI systems that reason like clinicians, integrate diverse data modalities, and communicate seamlessly through images and language.</p>
+          <h3>Generative AI</h3>
           <p>
-            My research focuses on developing generative AI models to support clinicians with predictive visual and textual insights into pathological conditions, serving as tools to improve clinical decision-making. Leveraging generative adversarial networks (GANs) and diffusion models, I have pioneered methods to enhance prognostic predictions in healthcare. I developed a GAN-based system capable of predicting osteoarthritis (OA) progression by synthesizing future radiographic images. This system has demonstrated predictive accuracy exceeding that of radiologists, forecasting OA progression up to eight years in advance, as published in Nature Machine Intelligence, providing clinicians with a valuable visual resource for anticipating disease outcomes. To address data-sharing constraints in medical research, I proposed using GANs to create high-resolution synthetic medical images devoid of identifiable patient information. This innovation not only bolsters computer vision model performance when trained on limited datasets but also diversifies clinical databases by incorporating underrepresented disease profiles through synthetic data integration. I also introduced DiffChest, a self-conditioned diffusion model trained on extensive patient data, providing patient-specific visual explanations and identifying potential confounding factors that could bias diagnostic models. This model significantly improves the robustness and interpretability of AI-based radiologic classification systems.
+            My research develops generative models that provide clinicians with predictive insights to support medical decision-making. I introduced DiffChest (<a href="https://www.sciencedirect.com/science/article/pii/S2666379124004348" target="_blank" rel="noopener noreferrer">Han, Cell Rep Med 24</a>), a self-conditioned diffusion model trained on large-scale patient data to generate patient-specific counterfactuals and identify confounding factors, thereby improving the robustness and interpretability of AI systems. In parallel, I leveraged generative adversarial networks to address key challenges in prediction (<a href="https://www.nature.com/articles/s42256-022-00560-x" target="_blank" rel="noopener noreferrer">Han, Nature Mach Intell 22</a>) and data sharing (<a href="https://www.science.org/doi/full/10.1126/sciadv.abb7973" target="_blank" rel="noopener noreferrer">Han, Sci Adv 20</a>). A generative model-based framework I developed predicts osteoarthritis progression by synthesizing future radiographs, achieving accuracy surpassing radiologists up to eight years in advance (<a href="https://www.nature.com/articles/s42256-022-00560-x" target="_blank" rel="noopener noreferrer">Han, Nature Mach Intell 22</a>). I also proposed generating high-resolution synthetic medical images to preserve privacy while enhancing model performance and data diversity through synthetic augmentation of underrepresented disease profiles (<a href="https://www.science.org/doi/full/10.1126/sciadv.abb7973" target="_blank" rel="noopener noreferrer">Han, Sci Adv 20</a>).
           </p>
-          <h3>Large Language Model for Medicine</h3>
+          <h3>Agentic AI</h3>
           <p>
-            In medicine, large language models (LLMs) like OpenAI’s GPT series have emerged as transformative tools. Recognizing the limitations of proprietary models and the need for patient privacy, I collaborated with Charité - Berlin University Medicine to develop MedAlpaca, an open-source medical LLM fine-tuned using the Medical Meadow dataset, a collection of approximately 900,000 medical question-answer pairs I curated. This work demonstrated that specialized fine-tuning substantially improves LLMs' ability to respond accurately to clinical inquiries. Additionally, I evaluated multimodal LLMs like GPT-4Vision on complex clinical cases from the New England Journal of Medicine and the Journal of the American Medical Association, showing that these models can surpass human performance in interpreting medical images when integrated with textual data. As co-senior author on a Nature Communications study, I showed that GPT-4’s Advanced Data Analysis tool could autonomously develop machine learning models from raw clinical trial data, often outperforming bespoke models crafted by data scientists, thereby offering a scalable framework to democratize ML-driven clinical research.
+            We develop medical large language models that integrate visual and textual reasoning to support clinical decision-making. In collaboration with Charité - Berlin University Medicine, I co-developed MedAlpaca (<a href="https://arxiv.org/abs/2304.08247" target="_blank" rel="noopener noreferrer">Han, arxiv 23</a>), an open-source LLM fine-tuned on the Medical Meadow dataset of ~900,000 medical QA pairs, achieving significant gains in clinical accuracy. I also evaluated GPT-4V on NEJM and JAMA cases (<a href="https://jamanetwork.com/journals/jama/fullarticle/2816270" target="_blank" rel="noopener noreferrer">Han, JAMA 24</a>), showing superior multimodal reasoning, and co-led a Nature Communications study demonstrating GPT-4's ability to autonomously build ML models from raw clinical trial data (<a href="https://www.nature.com/articles/s41467-024-45879-8" target="_blank" rel="noopener noreferrer">Tayebi Arasteh, Nature Comm 24</a>). Our ongoing work focuses on developing agentic systems for automated diagnosis using multimodal EHR data in emergency medicine and for cancer biomarker discovery through integrative imaging-genomic modeling.
           </p>
           <h3>Interpretable & Robust Medical AI</h3>
           <p>
-            Addressing the vulnerabilities and ethical considerations of AI in medicine, I explored the susceptibility of LLMs and medical vision models to misinformation and adversarial attacks. My research demonstrated that manipulating just 1% of an LLM's parameters could inject incorrect biomedical facts, raising concerns about the reliability of AI-generated medical advice. Additionally, I investigated adversarial attacks on medical vision models and proposed methods to enhance their robustness and interpretability. Specifically, I showed that while convolutional neural networks (CNNs) are highly susceptible to white- and black-box adversarial attacks in computational pathology tasks, vision transformers (ViTs) are significantly more robust learners. This suggests that deploying ViTs instead of CNNs in clinical settings can provide inherent protection against input perturbations, including adversarial attacks. In medical image reconstruction, I further demonstrated that even state-of-the-art unsupervised diffusion-based models for MRI reconstruction are susceptible to adversarial worst-case perturbations in k-space that can generate misleading, hallucinated tissue structures.
+            We study the vulnerabilities and ethical challenges of AI in medicine, focusing on misinformation and adversarial robustness. Our work showed that altering just 1% of an LLM's parameters can implant false biomedical knowledge, underscoring risks in AI-generated medical advice (<a href="https://www.nature.com/articles/s41746-024-01282-7" target="_blank" rel="noopener noreferrer">Han, NPJ Digital Med 24</a>). We further demonstrated that while CNNs are highly vulnerable to adversarial attacks in pathology (<a href="https://www.nature.com/articles/s41467-021-24464-3" target="_blank" rel="noopener noreferrer">Han, Nature Comm 21</a>), vision transformers (ViTs) exhibit markedly greater robustness. Extending this analysis (<a href="https://www.nature.com/articles/s41467-022-33266-0" target="_blank" rel="noopener noreferrer">Ghaffari Laleh, Nature Comm 22</a>), we revealed that even diffusion-based MRI reconstruction models remain susceptible to subtle k-space perturbations that can produce misleading anatomical artifacts (<a href="https://link.springer.com/chapter/10.1007/978-3-031-72104-5_49" target="_blank" rel="noopener noreferrer">Han, MICCAI 24</a>).
           </p>
         </div>
       </div>
@@ -57,18 +59,23 @@ import AutoGallery from '../components/core/AutoGallery.astro';
     <section class="contact__section">
       <div>
         <h2>Get Involved</h2>
-        <p>Join our mission to advance AI‑driven solutions in medicine through collaboration, support, or by applying to join the group.</p>
+        <p>Join our mission to advance AI-driven solutions in medicine through collaboration, support, or by applying to join the group.</p>
         <p><strong>Students:</strong> We welcome applicants from CS, engineering, and medicine. See <a href="/join">openings</a>.</p>
         <p><strong>Collaborations:</strong> We partner with clinicians, institutions, and industry. Reach out using the form.</p>
       </div>
       <div>
-        <form name="Homepage Contact" method="POST" action="/contact-thank-you" class="contact__form">
+        <form
+          action="https://submit-form.com/uvLDHK2nH"
+          method="POST"
+          class="contact__form"
+        >
+          <input type="text" name="_honeypot" tabIndex="-1" autocomplete="off" hidden />
           <div class="form-row">
-            <input type="text" name="First Name" placeholder="First Name" required />
-            <input type="text" name="Last Name" placeholder="Last Name" required />
+            <input type="text" name="firstName" placeholder="First Name" required />
+            <input type="text" name="lastName" placeholder="Last Name" required />
           </div>
-          <input type="email" name="Email" placeholder="Email" required />
-          <textarea name="Message" placeholder="Message" rows="6" required></textarea>
+          <input type="email" name="email" placeholder="Email" required />
+          <textarea name="message" placeholder="Message" rows="6" required></textarea>
           <button class="btn btn--outlined" type="submit">Send</button>
         </form>
       </div>

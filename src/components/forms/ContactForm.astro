@@ -9,11 +9,15 @@ const selectOptions = [
 
 ---
 
-<form name="Contact Form" method="POST" action="/contact-thank-you">
-  <FormInput type="text" label="Name" name="Name" placeholder="John Doe" />
-  <FormInput type="email" label="Email" name="Email" placeholder="hello@example.com" />
-  <FormSelect label="How Did You Hear About Us?" options={selectOptions} />
-  <FormTextarea label="Message" name="Message" placeholder="Your message here..." />
+<form
+  action="https://submit-form.com/uvLDHK2nH"
+  method="POST"
+>
+  <input type="text" name="_honeypot" tabIndex="-1" autocomplete="off" hidden />
+  <FormInput type="text" label="Name" name="name" placeholder="John Doe" required />
+  <FormInput type="email" label="Email" name="email" placeholder="hello@example.com" required />
+  <FormSelect label="How Did You Hear About Us?" name="referralSource" options={selectOptions} required />
+  <FormTextarea label="Message" name="message" placeholder="Your message here..." required />
   <Button>Submit</Button>
 </form>
 
